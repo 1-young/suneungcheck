@@ -1,0 +1,154 @@
+/* 기본 스타일 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: #f4f7fb;
+}
+
+/* 디데이 스타일 */
+.d-day {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6f61;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 강조사항 스타일 */
+.emphasis {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.emphasis-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #856404;
+    margin-bottom: 15px;
+}
+
+.emphasis ul {
+    list-style: none;
+    padding: 0;
+}
+
+.emphasis li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #856404;
+}
+
+/* 체크리스트 컨테이너 스타일 */
+.container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 섹션 제목 스타일 */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+/* 체크리스트 항목 스타일 */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 버튼 스타일 */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* 미디어 쿼리: 작은 화면에서 스타일 조정 */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .d-day {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+    }
+}

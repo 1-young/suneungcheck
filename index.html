@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수능 준비물 체크리스트</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 외부 CSS 파일 연결 -->
+</head>
+<body>
+
+    <div class="d-day" id="d-day">
+        <!-- 디데이가 표시될 곳 -->
+    </div>
+
+    <div class="container">
+        <h1>수능 준비물 체크리스트</h1>
+        
+        <!-- 밍쌤의 강조사항 -->
+        <div class="emphasis">
+            <p class="emphasis-title">밍쌤의 강조사항!</p>
+            <ul>
+                <li>1. OMR 체크 잘하고</li>
+                <li>2. 수능 당일 화장실 꼭 챙기기</li>
+                <li>3. 비상약 가져가기</li>
+                <li>4. 수능 당일 정답 맞추지 말기</li>
+                <li>5. 응원 소리 들으면 더 떨리니 학교 일찍 가기</li>
+                <li>6. 막혔을때 어떻게 대처할지 플랜 짜가기</li>
+                <li>7. 중간 쉬는 시간에 볼거 정리해가기</li>
+                <li>8. 마크 체킹 잘하기</li>
+                <li>9. 끝까지 공부하기</li>
+                <li>10. 건강 관리 하기(떡 조심, 매운 것 조심) - 전날 컨디션 안 좋으면 병원 가서 주사 맞기</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p class="section-title">필수 준비물</p>
+            <ul>
+                <li><input type="checkbox" id="admission_ticket"> <label for="admission_ticket">수험표</label></li>
+                <li><input type="checkbox" id="id_card"> <label for="id_card">신분증</label></li>
+                <li><input type="checkbox" id="sharpener"> <label for="sharpener">샤프심</label></li>
+                <li><input type="checkbox" id="eraser"> <label for="eraser">지우개</label></li>
+                <li><input type="checkbox" id="correction_tape"> <label for="correction_tape">수정테이프</label></li>
+                <li><input type="checkbox" id="analog_watch"> <label for="analog_watch">아날로그 시계</label></li>
+                <li><input type="checkbox" id="tissue"> <label for="tissue">휴지/물티슈</label></li>
+                <li><input type="checkbox" id="phone"> <label for="phone">핸드폰(수능 끝나고 엄청 심심함)</label></li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <p class="section-title">선택사항</p>
+            <ul>
+                <li><input type="checkbox" id="notebook"> <label for="notebook">간단한 필기노트</label></li>
+                <li><input type="checkbox" id="pencil"> <label for="pencil">연필</label></li>
+                <li><input type="checkbox" id="medicine"> <label for="medicine">비상약</label></li>
+                <li><input type="checkbox" id="snacks"> <label for="snacks">간식</label></li>
+                <li><input type="checkbox" id="blanket"> <label for="blanket">담요</label></li>
+                <li><input type="checkbox" id="scoring_sheet"> <label for="scoring_sheet">가채점표</label></li>
+            </ul>
+        </div>
+
+        <button class="submit-btn" onclick="submitChecklist()">체크리스트 제출</button>
+    </div>
+
+    <script>
+        // 수능 날짜 (2024년 11월 14일 오전 8시 10분)
+        const examDate = new Date("2024-11-14T00:00:00");
+
+        // D-day 계산 함수
+        function updateDday() {
+            const now = new Date();
+            const timeRemaining = examDate - now;
+
+            if (timeRemaining <= 0) {
+                document.getElementById("d-day").innerHTML = "수능! 역대 최고점수!";
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById("d-day").innerHTML = `수능 까지 ${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
+            }
+        }
+
+        // 디데이 시간 업데이트
+        setInterval(updateDday, 1000); // 1초마다 업데이트
+
+        // 체크리스트 제출 함수
+        function submitChecklist() {
+            // 팝업창으로 "이제 수험장으로!" 메시지 출력
+            alert("너네는 최선을 다했어! 이제 수험장으로! 화이팅!");
+        }
+    </script>
+
+</body>
+</html>
